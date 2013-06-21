@@ -150,4 +150,12 @@
  */
 - (BOOL)calendarView:(TSQCalendarView *)calendarView shouldDisplayEventMarkerForDate:(NSDate *)date;
 
+/** Customize day button by date will show.
+ 
+ @param dayButton Item of day button will show. It's based on UIButton class.
+ @param date Date of day button will show.
+ */
+
+- (void)calendarViewWillShowDayButton:(id)dayButton forDate:(NSDate *)date;
+
 @end

@@ -131,6 +131,11 @@
         [self.dayButtons[index] setTitle:title forState:UIControlStateNormal];
         [self.dayButtons[index] setAccessibilityLabel:accessibilityLabel];
         [[self.dayButtons[index] subtitleLabel] setText:subTitle];
+        
+        if ([self.calendarView.delegate respondsToSelector:@selector(calendarViewWillShowDayButton:forDate:)]) {
+            [self.calendarView.delegate calendarViewWillShowDayButton:self.dayButtons[index] forDate:date];
+        }
+        
         [self.notThisMonthButtons[index] setTitle:title forState:UIControlStateNormal];
         [self.notThisMonthButtons[index] setAccessibilityLabel:accessibilityLabel];
         [[self.notThisMonthButtons[index] subtitleLabel] setText:subTitle];
